@@ -27,9 +27,12 @@ const TodoList = () => {
             id: undone.length + 1,
             deal: inputValue
         }
-
-        setUndone((prevState) => [...prevState, doing])
-        setInputValue("")
+        if( inputValue.trim() !== ""){
+            setUndone((prevState) => [...prevState, doing])
+            setInputValue("")
+        }else{
+            alert("ჩაწერეთ სამუშაო ველში")
+        }
     }
 
     const madeDeal = useCallback((deal) => {
